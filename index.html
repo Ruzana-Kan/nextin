@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Next In - Programming & AI Education</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Orbitron:wght@400;500;600;700;900&display=swap" rel="stylesheet">
+    <link rel="icon" href="logo.png">
+    <link rel="stylesheet" href="main.css">
+   
+</head>
+<body>
+    <!-- Loading Screen -->
+    <div class="loading" id="loading">
+        <div class="spinner"></div>
+    </div>
+
+    <!-- Animated Background -->
+    <div class="animated-bg">
+        <div class="gradient-orb orb-1"></div>
+        <div class="gradient-orb orb-2"></div>
+        <div class="gradient-orb orb-3"></div>
+    </div>
+
+    <!-- Navigation -->
+    <nav id="navbar">
+        <div class="nav-container">
+            <div class="logo" onclick="showPage('home')"><img src="logo.png"height="90" width="100"></div>
+            <ul class="nav-links">
+                <li><a href="#" onclick="showPage('home')">Home</a></li>
+                <li><a href="#" onclick="showPage('about')">About</a></li>
+                <li><a href="#" onclick="showPage('courses')">Courses</a></li>
+                <li><a href="#" onclick="showPage('contact')">Contact</a></li>
+            </ul>
+            <div class="mobile-menu" onclick="toggleMobileMenu()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <main>
+        <!-- Home Page -->
+        <div id="home" class="page active">
+            <div class="container">
+                <div class="hero">
+                    <h1>Next In</h1>
+                    <p class="motto">To educate youth about programming and AI, and raise awareness about technology.</p>
+                    <a href="#" class="cta-button" onclick="showPage('courses')">Explore Courses</a>
+                </div>
+
+                <div class="features">
+                    <div class="feature-card">
+                        <span class="feature-icon">🎓</span>
+                        <h3>Expert Education</h3>
+                        <p>Learn from industry professionals with years of experience in programming and AI development.</p>
+                    </div>
+                    <div class="feature-card">
+                        <span class="feature-icon">🚀</span>
+                        <h3>Modern Technology</h3>
+                        <p>Stay ahead with cutting-edge programming languages, frameworks, and AI technologies.</p>
+                    </div>
+                    <div class="feature-card">
+                        <span class="feature-icon">🌟</span>
+                        <h3>Practical Projects</h3>
+                        <p>Build real-world applications and gain hands-on experience with live coding sessions.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- About Page -->
+<section id="about" class="section page">
+    <div class="container">
+        <h2>About Next In</h2>
+        <div class="about-content">
+            <div class="about-text">
+                <p>At Next In, we're passionate about empowering the next generation with cutting-edge programming and AI knowledge. Our mission is to bridge the gap between traditional education and the rapidly evolving tech landscape.</p>
+                <p>We believe that every young mind has the potential to innovate and create solutions that will shape our future. Through our comprehensive courses and expert guidance, we're building a community of tech-savvy individuals ready to tackle tomorrow's challenges.</p>
+            </div>
+            <div class="about-features">
+                <div class="feature-card">
+                    <h3>🚀 Modern Curriculum</h3>
+                    <p>Stay ahead with the latest programming languages, AI frameworks, and industry best practices.</p>
+                </div>
+                <div class="feature-card">
+                    <h3>👨‍🏫 Expert Instructors</h3>
+                    <p>Learn from industry professionals with real-world experience in tech and AI development.</p>
+                </div>
+                <div class="feature-card">
+                    <h3>🌐 Community Driven</h3>
+                    <p>Join a vibrant community of learners, mentors, and tech enthusiasts supporting each other.</p>
+                </div>
+            </div>
+        </div>
+        </div>
+    </section>
+
+        <!-- Courses Page -->
+        <div id="courses" class="page">
+            <div class="container">
+                <!-- Free Video Courses -->
+                <div class="course-section free-courses">
+                    <h2>✅ Free Video Courses</h2>
+                    <div class="course-grid">
+                        <div class="course-card feature-card">
+                            <h3>Web Design and Development</h3>
+                            <p>Learn HTML, CSS, and responsive design principles.</p>
+                            <div class="course-price">FREE</div>
+                        </div>
+                        <div class="course-card feature-card">
+                            <h3>Python Programming</h3>
+                            <p>Master Python fundamentals and object-oriented programming.</p>
+                            <div class="course-price">FREE</div>
+                        </div>
+                        <div class="course-card feature-card">
+                            <h3>SQL & Database</h3>
+                            <p>Database design, queries, and data management.</p>
+                            <div class="course-price">FREE</div>
+                        </div>
+                        <div class="course-card feature-card">
+                            <h3>CSS Frameworks</h3>
+                            <p>Bootstrap, Tailwind CSS, and modern styling approaches.</p>
+                            <div class="course-price">FREE</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Paid Video Courses -->
+                <div class="course-section paid-video">
+                    <h2>💰 Paid Video Courses</h2>
+                    <div class="course-grid">
+                        <div class="course-card feature-card">
+                            <h3>Advanced JavaScript</h3>
+                            <p>ES6+, async programming, and modern JS frameworks.</p>
+                            <div class="course-price">$99</div>
+                        </div>
+                        <div class="course-card feature-card">
+                            <h3>PHP Development</h3>
+                            <p>Server-side programming and web application development.</p>
+                            <div class="course-price">$79</div>
+                        </div>
+                        <div class="course-card feature-card">
+                            <h3>Python Libraries</h3>
+                            <p>NumPy, Pandas, Matplotlib, and data science tools.</p>
+                            <div class="course-price">$129</div>
+                        </div>
+                        <div class="course-card feature-card">
+                            <h3>AI Prompt Engineering</h3>
+                            <p>Master the art of AI communication and optimization.</p>
+                            <div class="course-price">$149</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Paid Live Courses -->
+                <div class="course-section paid-live">
+                    <h2>🧑‍🏫 Paid Live Courses</h2>
+                    <div class="course-grid">
+                        <div class="course-card feature-card">
+                            <h3>Full-Stack Development</h3>
+                            <p>Complete web development with live mentorship.</p>
+                            <div class="course-price">$299</div>
+                        </div>
+                        <div class="course-card feature-card">
+                            <h3>AI & Machine Learning</h3>
+                            <p>Live sessions on AI development and implementation.</p>
+                            <div class="course-price">$399</div>
+                        </div>
+                        <div class="course-card feature-card">
+                            <h3>Advanced Python Frameworks</h3>
+                            <p>Django, Flask, and FastAPI with live coding.</p>
+                            <div class="course-price">$249</div>
+                        </div>
+                        <div class="course-card feature-card">
+                            <h3>JavaScript Libraries Bootcamp</h3>
+                            <p>React, Vue, Angular with interactive sessions.</p>
+                            <div class="course-price">$349</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Contact Page -->
+  <div id="contact" class="page">
+            <div class="container">
+                <form class="contact-form" onsubmit="sendEmail(event)">
+                    <h2>Get In Touch</h2>
+                    <div class="form-group">
+                        <label for="name">Name</label>
+                        <input type="text" id="name" name="from_name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="from_email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Message</label>
+                        <textarea id="message" name="message" required></textarea>
+                    </div>
+                    <button type="submit" class="submit-btn" id="submit-btn">Send Message</button>
+                </form>
+                
+                <!-- Status message -->
+                <div id="status-message" style="text-align: center; margin-top: 1rem; display: none;">
+                    <p id="status-text"></p>
+                </div>
+    </main>
+
+<script src="main.js"></script>
+
+</body>
+</html>
+       
