@@ -3,10 +3,1128 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Next In - Programming & AI Education</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Orbitron:wght@400;500;600;700;900&display=swap" rel="stylesheet">
+    <title>NeXT INnovation - Empowering Bangladesh with Programming & AI</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Sora:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="icon" href="logo.png">
-    <link rel="stylesheet" href="main.css">
+    <style>* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+:root {
+    /* Simplified palette derived from the logo: indigo/periwinkle blue on dark navy */
+    --purple: #746cfd;       /* deep indigo accent */
+    --sky-blue: #81a1f8;     /* light indigo/periwinkle - matches logo arrow */
+    --green-mint: #68b3fe;   /* secondary indigo (was mint green) */
+    --neon-pink: #c6a5fc;    /* pale periwinkle (was pink) */
+    --gold: #E0E7FF;         /* soft lavender-white highlight (was gold) */
+    --deep-blue: #05061a;
+    --bg-dark: #070818;
+    --text-light: #ffffff;
+    --text-gray: #9498b8;
+    --accent-1: #818CF8;
+    --accent-2: #7173ff;
+    --ease-elegant: cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background: var(--bg-dark);
+    color: var(--text-light);
+    overflow-x: hidden;
+    line-height: 1.6;
+}
+
+::selection {
+    background: var(--purple);
+    color: #fff;
+}
+
+/* Custom scrollbar for a more polished feel */
+::-webkit-scrollbar {
+    width: 10px;
+}
+::-webkit-scrollbar-track {
+    background: var(--deep-blue);
+}
+::-webkit-scrollbar-thumb {
+    background: linear-gradient(var(--accent-1), var(--accent-2));
+    border-radius: 10px;
+}
+
+/* Animated Background */
+.animated-bg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    overflow: hidden;
+}
+
+.particle {
+    position: absolute;
+    width: 3px;
+    height: 3px;
+    border-radius: 50%;
+    background: var(--sky-blue);
+    box-shadow: 0 0 8px var(--sky-blue);
+    animation: matrix-rain 8s linear infinite;
+    opacity: 0.6;
+}
+
+@keyframes matrix-rain {
+    0% { 
+        transform: translateY(-100vh) scale(0);
+        opacity: 0;
+    }
+    10% {
+        opacity: 1;
+        transform: translateY(-90vh) scale(1);
+    }
+    90% {
+        opacity: 1;
+        transform: translateY(90vh) scale(1);
+    }
+    100% { 
+        transform: translateY(100vh) scale(0);
+        opacity: 0;
+    }
+}
+
+.gradient-orb {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(70px);
+    animation: cosmic-drift 16s ease-in-out infinite;
+}
+
+.orb-1 {
+    width: 400px;
+    height: 400px;
+    background: radial-gradient(circle, var(--purple) 0%, var(--deep-blue) 60%, transparent 80%);
+    top: 5%;
+    left: 5%;
+    animation-delay: 0.7s;
+    opacity: 0.35;
+}
+
+.orb-2 {
+    width: 300px;
+    height: 300px;
+    background: radial-gradient(circle, var(--sky-blue) 0%, var(--deep-blue) 60%, transparent 80%);
+    top: 50%;
+    right: 10%;
+    animation-delay: 4s;
+    opacity: 0.3;
+}
+
+.orb-3 {
+    width: 350px;
+    height: 350px;
+    background: radial-gradient(circle, var(--green-mint) 0%, var(--deep-blue) 60%, transparent 80%);
+    bottom: 10%;
+    left: 40%;
+    animation-delay: 8s;
+    opacity: 0.3;
+}
+
+.orb-4 {
+    width: 250px;
+    height: 250px;
+    background: radial-gradient(circle, var(--neon-pink) 0%, var(--deep-blue) 60%, transparent 80%);
+    top: 30%;
+    left: 70%;
+    animation-delay: 2s;
+    opacity: 0.25;
+}
+
+@keyframes cosmic-drift {
+    0%, 100% { 
+        transform: translate(0, 0) scale(1) rotate(30deg); 
+        opacity: 0.25; 
+    }
+    50% { 
+        transform: translate(20px, -30px) scale(1.1) rotate(180deg); 
+        opacity: 0.4; 
+    }
+}
+
+.floating-shapes {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
+.shape {
+    position: absolute;
+    background: linear-gradient(45deg, var(--sky-blue), var(--purple));
+    animation: float-shape 15s ease-in-out infinite;
+    opacity: 0.08;
+}
+
+.shape:nth-child(1) {
+    width: 20px;
+    height: 20px;
+    top: 20%;
+    left: 15%;
+    animation-delay: 0s;
+    border-radius: 50%;
+}
+
+.shape:nth-child(2) {
+    width: 15px;
+    height: 15px;
+    top: 60%;
+    left: 80%;
+    animation-delay: 3s;
+    transform: rotate(45deg);
+}
+
+.shape:nth-child(3) {
+    width: 25px;
+    height: 25px;
+    top: 80%;
+    left: 20%;
+    animation-delay: 6s;
+    clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+}
+
+@keyframes float-shape {
+    0%, 100% { transform: translateY(0px) rotate(0deg); }
+    33% { transform: translateY(-30px) rotate(120deg); }
+    66% { transform: translateY(20px) rotate(240deg); }
+}
+
+/* Navigation */
+nav {
+    position: fixed;
+    top: 0;
+    height: 15%;
+    width: 100%;
+    backdrop-filter: blur(20px);
+    z-index: 1000;
+    padding: 1rem 0;
+    transition: all 0.4s var(--ease-elegant);
+    border-bottom: 1px solid transparent;
+}
+
+nav.scrolled {
+    background: rgba(7, 8, 24, 0.7);
+    box-shadow: 0 4px 30px rgba(129, 140, 248, 0.1);
+    border-bottom: 1px solid rgba(129, 140, 248, 0.12);
+}
+
+.nav-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 1rem;
+}
+
+.logo {
+    position: relative;
+    cursor: pointer;
+    transition: transform 0.4s var(--ease-elegant), filter 0.4s ease;
+}
+
+.logo:hover {
+    transform: scale(1.07) rotate(-2deg);
+    filter: drop-shadow(0 0 14px rgba(129, 140, 248, 0.55));
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 1rem;
+}
+
+.nav-links a {
+    color: var(--text-light);
+    text-decoration: none;
+    font-weight: 400;
+    font-size: 0.95rem;
+    position: relative;
+    transition: all 0.3s ease;
+    padding: 0.5rem 1rem;
+    border-radius: 8px;
+    letter-spacing: 0.01em;
+}
+
+.nav-links a:hover {
+    color: var(--sky-blue);
+    background: rgba(129, 140, 248, 0.08);
+}
+
+.nav-links a::after {
+    content: '';
+    position: absolute;
+    bottom: 2px;
+    width: 0;
+    height: 2px;
+    left: 50%;
+    background: linear-gradient(90deg, var(--purple), var(--sky-blue));
+    transition: all 0.35s var(--ease-elegant);
+    transform: translateX(-50%);
+    border-radius: 2px;
+}
+
+.nav-links a:hover::after {
+    width: calc(100% - 1.6rem);
+}
+
+.mobile-menu {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    gap: 5px;
+    cursor: pointer;
+    width: 30px;
+    height: 24px;
+}
+
+.mobile-menu span {
+    width: 100%;
+    height: 2.5px;
+    background: var(--sky-blue);
+    border-radius: 2px;
+    transition: all 0.35s var(--ease-elegant);
+    transform-origin: center;
+}
+
+.mobile-menu.open span:nth-child(1) {
+    transform: translateY(7.5px) rotate(45deg);
+}
+.mobile-menu.open span:nth-child(2) {
+    opacity: 0;
+    transform: scaleX(0);
+}
+.mobile-menu.open span:nth-child(3) {
+    transform: translateY(-7.5px) rotate(-45deg);
+}
+
+/* Main Content */
+main {
+    position: relative;
+    z-index: 1;
+}
+
+.page {
+    display: none;
+    min-height: 100vh;
+    padding: 120px 2rem 4rem;
+}
+
+.page.active {
+    display: block;
+    animation: fadeInUp 0.6s var(--ease-elegant);
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Home Page */
+.hero {
+    text-align: center;
+    padding: 4rem 0;
+}
+
+.hero-eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.4rem 1rem;
+    border-radius: 30px;
+    background: rgba(129, 140, 248, 0.08);
+    border: 1px solid rgba(129, 140, 248, 0.25);
+    color: var(--sky-blue);
+    font-size: 0.8rem;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    margin-bottom: 1.5rem;
+    animation: fadeInUp 0.7s var(--ease-elegant);
+}
+
+.hero-eyebrow .dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--sky-blue);
+    box-shadow: 0 0 8px var(--sky-blue);
+    animation: pulse-dot 1.8s ease-in-out infinite;
+}
+
+@keyframes pulse-dot {
+    0%, 100% { opacity: 1; transform: scale(1); }
+    50% { opacity: 0.4; transform: scale(0.7); }
+}
+
+.hero h1 {
+    font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-size: clamp(3rem, 8vw, 6rem);
+    font-weight: 400;
+    margin-bottom: 1rem;
+    background: linear-gradient(60deg, var(--sky-blue), var(--purple), var(--sky-blue));
+    background-size: 200% auto;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    animation: glow 3s ease-in-out infinite alternate, shine 6s linear infinite;
+}
+
+@keyframes glow {
+    from { filter: drop-shadow(0 0 15px rgba(79, 70, 229, 0.5)); }
+    to { filter: drop-shadow(0 0 25px rgba(129, 140, 248, 0.6)); }
+}
+
+@keyframes shine {
+    to { background-position: 200% center; }
+}
+
+.brand-mark {
+    display: inline-flex;
+    align-items: baseline;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.3rem;
+}
+
+
+.hero .motto {
+    font-size: 1.2rem;
+    color: var(--text-gray);
+    margin-bottom: 3rem;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.cta-button {
+    display: inline-block;
+    padding: 1rem 2.2rem;
+    background: linear-gradient(135deg, var(--purple), var(--deep-blue));
+    color: white;
+    text-decoration: none;
+    border-radius: 50px;
+    font-weight: 600;
+    letter-spacing: 0.01em;
+    border: 1px solid rgba(129, 140, 248, 0.4);
+    transition: transform 0.4s var(--ease-elegant), box-shadow 0.4s var(--ease-elegant), border-color 0.4s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.cta-button::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transition: left 0.6s ease;
+}
+
+.cta-button:hover::before {
+    left: 100%;
+}
+
+.cta-button:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 14px 34px rgba(79, 70, 229, 0.45);
+    border-color: var(--sky-blue);
+}
+
+.cta-button:active {
+    transform: translateY(-1px);
+}
+
+/* Features Section */
+.features {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin: 4rem 0;
+}
+
+.feature-card {
+    background: linear-gradient(145deg, rgba(129, 140, 248, 0.08), rgba(255, 255, 255, 0.02));
+    padding: 2rem;
+    border-radius: 20px;
+    border: 1px solid rgba(129, 140, 248, 0.2);
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.45s var(--ease-elegant), border-color 0.45s ease, box-shadow 0.45s var(--ease-elegant);
+    backdrop-filter: blur(20px);
+    box-shadow: 
+        0 8px 32px rgba(79, 70, 229, 0.08),
+        inset 0 1px 0 rgba(255, 255, 255, 0.08),
+        inset 0 -1px 0 rgba(0, 0, 0, 0.15);
+}
+
+.feature-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, 
+        transparent, 
+        rgba(129, 140, 248, 0.25), 
+        transparent);
+    transition: left 0.8s ease;
+    z-index: 1;
+}
+
+.feature-card::after {
+    content: '';
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    background: linear-gradient(45deg, rgba(79, 70, 229, 0.5), rgba(129, 140, 248, 0.5));
+    z-index: -1;
+    border-radius: 22px;
+    opacity: 0;
+    transition: opacity 0.4s ease;
+}
+
+.feature-card:hover {
+    transform: translateY(-12px) scale(1.015);
+    border-color: var(--sky-blue);
+    box-shadow: 
+        0 24px 48px rgba(79, 70, 229, 0.2),
+        inset 0 1px 0 rgba(255, 255, 255, 0.15);
+}
+
+.feature-card:hover::before {
+    left: 100%;
+}
+
+.feature-card:hover::after {
+    opacity: 1;
+}
+
+.feature-card > * {
+    position: relative;
+    z-index: 2;
+}
+
+.feature-icon {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    display: block;
+    filter: drop-shadow(0 0 8px rgba(129, 140, 248, 0.4));
+    transition: transform 0.45s var(--ease-elegant);
+}
+
+.feature-card:hover .feature-icon {
+    transform: scale(1.15) rotate(-6deg);
+}
+
+.feature-card h3 {
+    margin-bottom: 1rem;
+    color: var(--sky-blue);
+    text-shadow: 0 0 10px rgba(129, 140, 248, 0.2);
+}
+
+/* About Page */
+.about-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    align-items: center;
+}
+
+.about-text {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: var(--text-gray);
+}
+
+.about-features {
+    display: grid;
+    gap: 1.5rem;
+}
+
+/* Courses Page */
+.course-section {
+    margin-bottom: 4rem;
+}
+
+.course-section h2 {
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+.free-courses h2 {
+    color: var(--sky-blue);
+}
+
+.paid-video h2 {
+    color: var(--sky-blue);
+}
+
+.paid-live h2 {
+    color: var(--sky-blue);
+}
+
+.course-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+}
+
+.course-card h3 {
+    margin-bottom: 1rem;
+    color: var(--sky-blue);
+    text-shadow: 0 0 8px rgba(129, 140, 248, 0.3);
+}
+
+.course-price {
+    font-weight: 600;
+    font-size: 1.2rem;
+    color: var(--sky-blue);
+}
+
+.course-price del {
+    color: var(--text-gray);
+    font-weight: 400;
+    font-size: 0.95rem;
+    margin-left: 0.4rem;
+    opacity: 0.75;
+}
+
+.free-courses .course-price,
+.paid-video .course-price,
+.paid-live .course-price {
+    color: var(--sky-blue);
+}
+
+/* Empty state (Free Video Courses) */
+.empty-state {
+    grid-column: 1 / -1;
+    text-align: center;
+    padding: 3rem 2rem;
+    border: 1.5px dashed rgba(129, 140, 248, 0.2);
+    border-radius: 20px;
+    color: var(--text-gray);
+    background: rgba(255, 255, 255, 0.02);
+    transition: border-color 0.4s ease, background 0.4s ease;
+}
+
+.empty-state:hover {
+    border-color: rgba(129, 140, 248, 0.4);
+    background: rgba(129, 140, 248, 0.03);
+}
+
+.empty-icon {
+    font-size: 2.5rem;
+    display: block;
+    margin-bottom: 0.75rem;
+    opacity: 0.6;
+}
+
+/* Course meta (duration info) */
+.course-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin: 1rem 0;
+}
+
+.meta-item {
+    font-size: 0.8rem;
+    padding: 0.35rem 0.7rem;
+    border-radius: 30px;
+    background: rgba(129, 140, 248, 0.08);
+    border: 1px solid rgba(129, 140, 248, 0.18);
+    color: var(--text-gray);
+    white-space: nowrap;
+    transition: background 0.3s ease, border-color 0.3s ease, color 0.3s ease;
+}
+
+.course-card:hover .meta-item {
+    border-color: rgba(129, 140, 248, 0.35);
+    color: var(--text-light);
+}
+
+/* View More button */
+.view-more-btn {
+    display: inline-block;
+    margin-top: 1rem;
+    padding: 0.65rem 1.4rem;
+    background: transparent;
+    border: 1.5px solid var(--accent-1);
+    color: var(--accent-1);
+    border-radius: 30px;
+    font-weight: 600;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: all 0.35s var(--ease-elegant);
+}
+
+.view-more-btn:hover {
+    background: linear-gradient(135deg, var(--accent-1), var(--accent-2));
+    color: #05061a;
+    border-color: transparent;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(129, 140, 248, 0.25);
+}
+
+.view-more-btn:active {
+    transform: translateY(0);
+}
+
+/* Course detail modal */
+.modal-overlay {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(3, 3, 15, 0.75);
+    backdrop-filter: blur(6px);
+    z-index: 2000;
+    align-items: center;
+    justify-content: center;
+    padding: 1.5rem;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.modal-overlay.open {
+    display: flex;
+    opacity: 1;
+}
+
+.modal-box {
+    position: relative;
+    max-width: 520px;
+    width: 100%;
+    max-height: 85vh;
+    overflow-y: auto;
+    background: linear-gradient(160deg, rgba(15, 16, 45, 0.97), rgba(7, 8, 24, 0.97));
+    border: 1px solid rgba(129, 140, 248, 0.2);
+    border-radius: 20px;
+    padding: 2.5rem 2rem 2rem;
+    box-shadow: 0 25px 60px rgba(0, 0, 0, 0.5);
+    transform: translateY(24px) scale(0.95);
+    transition: transform 0.4s var(--ease-elegant);
+}
+
+.modal-overlay.open .modal-box {
+    transform: translateY(0) scale(1);
+}
+
+.modal-close {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    background: rgba(255, 255, 255, 0.06);
+    border: none;
+    color: var(--text-light);
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: all 0.3s var(--ease-elegant);
+}
+
+.modal-close:hover {
+    background: var(--purple);
+    transform: rotate(90deg);
+}
+
+#modal-title {
+    background: linear-gradient(135deg, var(--accent-1), var(--accent-2));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin-bottom: 1rem;
+    font-size: 1.6rem;
+}
+
+.modal-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+}
+
+#modal-desc {
+    color: var(--text-gray);
+    margin-bottom: 1.5rem;
+}
+
+/* Curriculum list inside modal */
+.modal-curriculum {
+    margin-bottom: 1.5rem;
+}
+
+.modal-curriculum h4 {
+    color: var(--sky-blue);
+    font-size: 1rem;
+    margin-bottom: 0.75rem;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+    font-weight: 600;
+    opacity: 0.9;
+}
+
+.curriculum-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    max-height: 260px;
+    overflow-y: auto;
+    padding-right: 0.5rem;
+}
+
+.curriculum-list::-webkit-scrollbar {
+    width: 6px;
+}
+
+.curriculum-list::-webkit-scrollbar-thumb {
+    background: rgba(129, 140, 248, 0.3);
+    border-radius: 10px;
+}
+
+.curriculum-item {
+    display: flex;
+    gap: 0.75rem;
+    align-items: flex-start;
+    padding: 0.6rem 0.75rem;
+    background: rgba(129, 140, 248, 0.05);
+    border: 1px solid rgba(129, 140, 248, 0.12);
+    border-radius: 10px;
+    font-size: 0.9rem;
+    color: var(--text-light);
+    line-height: 1.4;
+    transition: background 0.3s ease, border-color 0.3s ease, transform 0.3s var(--ease-elegant);
+}
+
+.curriculum-item:hover {
+    background: rgba(129, 140, 248, 0.1);
+    border-color: rgba(129, 140, 248, 0.3);
+    transform: translateX(4px);
+}
+
+.curriculum-day {
+    flex-shrink: 0;
+    color: var(--sky-blue);
+    font-weight: 700;
+    font-size: 0.8rem;
+    background: rgba(129, 140, 248, 0.12);
+    border-radius: 6px;
+    padding: 0.15rem 0.5rem;
+    white-space: nowrap;
+}
+
+.modal-price {
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: var(--sky-blue);
+    margin-bottom: 1.5rem;
+}
+
+.modal-cta {
+    width: 100%;
+    text-align: center;
+    padding: 0.9rem 1.5rem;
+}
+
+/* Team Page */
+.section-title {
+    font-size: 2.5rem;
+    text-align: center;
+    background: linear-gradient(135deg, var(--accent-1), var(--accent-2));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin-bottom: 0.5rem;
+}
+
+.section-subtitle {
+    text-align: center;
+    color: var(--text-gray);
+    margin-bottom: 3rem;
+}
+
+.team-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 2rem;
+}
+
+.team-card {
+    background: linear-gradient(145deg, rgba(129, 140, 248, 0.06), rgba(255, 255, 255, 0.02));
+    border: 1px solid rgba(129, 140, 248, 0.15);
+    border-radius: 20px;
+    padding: 2rem 1.5rem;
+    text-align: center;
+    transition: transform 0.45s var(--ease-elegant), border-color 0.45s ease, box-shadow 0.45s var(--ease-elegant);
+    position: relative;
+    overflow: hidden;
+}
+
+.team-card::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, rgba(129, 140, 248, 0.1), rgba(99, 102, 241, 0.1));
+    opacity: 0;
+    transition: opacity 0.35s ease;
+}
+
+.team-card:hover {
+    transform: translateY(-10px);
+    border-color: var(--accent-1);
+    box-shadow: 0 20px 40px rgba(79, 70, 229, 0.12);
+}
+
+.team-card:hover::before {
+    opacity: 1;
+}
+
+.team-card > * {
+    position: relative;
+    z-index: 1;
+}
+
+.team-img {
+    width: 110px;
+    height: 110px;
+    margin: 0 auto 1.25rem;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 3px solid transparent;
+    background: linear-gradient(var(--bg-dark), var(--bg-dark)) padding-box,
+                linear-gradient(135deg, var(--accent-1), var(--accent-2)) border-box;
+    transition: transform 0.45s var(--ease-elegant), box-shadow 0.45s ease;
+}
+
+.team-card:hover .team-img {
+    transform: scale(1.08) rotate(3deg);
+    box-shadow: 0 0 0 6px rgba(129, 140, 248, 0.1);
+}
+
+.team-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.team-card h3 {
+    margin-bottom: 0.4rem;
+    color: var(--text-light);
+}
+
+.team-role {
+    color: var(--accent-1);
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .nav-links {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        flex-direction: column;
+        background: rgba(7, 8, 24, 0.97);
+        backdrop-filter: blur(20px);
+        padding: 1rem;
+        gap: 0.25rem;
+        border-bottom: 1px solid rgba(129, 140, 248, 0.15);
+    }
+
+    .nav-links.open {
+        display: flex;
+        animation: fadeInUp 0.3s var(--ease-elegant);
+    }
+
+    .mobile-menu {
+        display: flex;
+    }
+
+    .hero h1 {
+        font-size: 3rem;
+    }
+
+    .features {
+        grid-template-columns: 1fr;
+    }
+
+    .course-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .nav-container {
+        padding: 0 1rem;
+    }
+
+    .page {
+        padding: 100px 1rem 2rem;
+    }
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+    * {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+}
+
+/* Visible keyboard focus for accessibility */
+a:focus-visible,
+button:focus-visible,
+.cta-button:focus-visible,
+.view-more-btn:focus-visible,
+.logo:focus-visible {
+    outline: 2px solid var(--sky-blue);
+    outline-offset: 3px;
+    border-radius: 6px;
+}
+
+/* Loading Animation */
+.loading {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: var(--bg-dark);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    transition: opacity 0.5s ease;
+}
+
+.loading.hidden {
+    opacity: 0;
+    pointer-events: none;
+}
+
+.spinner {
+    width: 50px;
+    height: 50px;
+    border: 3px solid rgba(129, 140, 248, 0);
+    border-top: 3px solid var(--sky-blue);
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+.footer {
+    height: auto;
+    width: 100%;
+    color: var(--text-gray);
+    text-align: center;
+    padding: 2.5rem 1rem 1.5rem;
+    font-size: 0.85rem;
+    border-top: 1px solid rgba(129, 140, 248, 0.12);
+    position: relative;
+    z-index: 1;
+}
+
+.footer strong {
+    color: var(--sky-blue);
+    font-weight: 600;
+}
+
+.footer-contact {
+    max-width: 600px;
+    margin: 0 auto 1.75rem;
+    text-align: center;
+}
+
+.footer-contact p {
+    color: var(--text-gray);
+    margin-bottom: 1rem;
+    font-size: 0.95rem;
+}
+
+.footer .social-links {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.footer .social-link {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.7rem 1.2rem;
+    background: rgba(129, 140, 248, 0.06);
+    border: 1px solid rgba(129, 140, 248, 0.2);
+    border-radius: 30px;
+    color: var(--text-light);
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: 500;
+    transition: all 0.35s var(--ease-elegant);
+}
+
+.footer .social-link svg {
+    width: 18px;
+    height: 18px;
+    fill: var(--sky-blue);
+    flex-shrink: 0;
+    transition: fill 0.3s ease;
+}
+
+.footer .social-link:hover {
+    background: linear-gradient(135deg, var(--accent-1), var(--accent-2));
+    border-color: transparent;
+    color: #05061a;
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(129, 140, 248, 0.25);
+}
+
+.footer .social-link:hover svg {
+    fill: #05061a;
+}
+
+</style>
    
 </head>
 <body>
@@ -25,14 +1143,14 @@
     <!-- Navigation -->
     <nav id="navbar">
         <div class="nav-container">
-            <div class="logo" onclick="showPage('home')"><img src="logo.png"height="90" width="100"></div>
-            <ul class="nav-links">
+            <div class="logo" onclick="showPage('home')" tabindex="0"><img src="logo.png"height="90" width="100"></div>
+            <ul class="nav-links" id="navLinks">
                 <li><a href="#" onclick="showPage('home')">Home</a></li>
                 <li><a href="#" onclick="showPage('about')">About</a></li>
                 <li><a href="#" onclick="showPage('courses')">Courses</a></li>
-                <li><a href="#" onclick="showPage('contact')">Contact</a></li>
+                <li><a href="#" onclick="showPage('team')">Team</a></li>
             </ul>
-            <div class="mobile-menu" onclick="toggleMobileMenu()">
+            <div class="mobile-menu" id="mobileMenu" onclick="toggleMobileMenu()">
                 <span></span>
                 <span></span>
                 <span></span>
@@ -45,7 +1163,7 @@
         <div id="home" class="page active">
             <div class="container">
                 <div class="hero">
-                    <h1>Next In</h1>
+                    <h1 class="brand-mark">NeXT Innovation</h1>
                     <p class="motto">To educate youth about programming and AI, and raise awareness about technology.</p>
                     <a href="#" class="cta-button" onclick="showPage('courses')">Explore Courses</a>
                 </div>
@@ -73,10 +1191,10 @@
         <!-- About Page -->
 <section id="about" class="section page">
     <div class="container">
-        <h2>About Next In</h2>
+        <h2>About Next Innovation</h2>
         <div class="about-content">
             <div class="about-text">
-                <p>At Next In, we're passionate about empowering the next generation with cutting-edge programming and AI knowledge. Our mission is to bridge the gap between traditional education and the rapidly evolving tech landscape.</p>
+                <p>At Next Innovation, we're passionate about empowering the next generation with cutting-edge programming and AI knowledge. Our mission is to bridge the gap between traditional education and the rapidly evolving tech landscape.</p>
                 <p>We believe that every young mind has the potential to innovate and create solutions that will shape our future. Through our comprehensive courses and expert guidance, we're building a community of tech-savvy individuals ready to tackle tomorrow's challenges.</p>
             </div>
             <div class="about-features">
@@ -100,117 +1218,379 @@
         <!-- Courses Page -->
         <div id="courses" class="page">
             <div class="container">
+
+
+                                <!-- Paid Live Courses -->
+                <div class="course-section paid-live">
+                    <h2>🧑‍🏫 Paid Live Courses</h2>
+                     <div class="course-grid">
+                        <div class="course-card feature-card">
+                            <h3>AI &amp; Prompt Engineering</h3>
+                            <p>
+Master the art of AI communication, prompt design, and optimization for real-world tools.
+                            </p>
+                            <div class="course-meta">
+                                <span class="meta-item">📅 8 weeks</span>
+                                <span class="meta-item">🗓️ 2 classes/week</span>
+                                <span class="meta-item">⏱️ 1.5 hrs/class</span>
+                                <span class="meta-item">💻 Live on Google Meet</span>
+                            </div>
+                            <div class="course-price">৳999 <del>৳4500</del></div>
+                            <button class="view-more-btn" onclick="openCourseModal('ai-prompt')">View More</button>
+                        </div>
+                        <div class="course-card feature-card">
+                            <h3>Digital Marketing</h3>
+                            <p>Learn SEO, social media growth, and campaign strategy to market products online.</p>
+                            <div class="course-meta">
+                                <span class="meta-item">📅 8 weeks</span>
+                                <span class="meta-item">🗓️ 2 classes/week</span>
+                                <span class="meta-item">⏱️ 1.5 hrs/class</span>
+                                <span class="meta-item">💻 Live on Google Meet</span>
+                            </div>
+                            <div class="course-price">৳999 <del>৳3000</del></div>
+                            <button class="view-more-btn" onclick="openCourseModal('digital-marketing')">View More</button>
+                        </div>
+                    </div>
+      
+
+        <!-- Course Detail Modal -->
+        <div id="course-modal" class="modal-overlay" onclick="closeCourseModalOnOverlay(event)">
+            <div class="modal-box">
+                <button class="modal-close" onclick="closeCourseModal()">✕</button>
+                <h3 id="modal-title"></h3>
+                <div class="modal-meta" id="modal-meta"></div>
+                <p id="modal-desc"></p>
+                <div class="modal-curriculum" id="modal-curriculum-wrap" style="display:none;">
+                    <h4>Course Curriculum</h4>
+                    <ul class="curriculum-list" id="modal-curriculum"></ul>
+                </div>
+                <div class="modal-price" id="modal-price"></div>
+                <a href="https://forms.gle/1wDjtCRSj563qF4y6" target="_blank" rel="noopener noreferrer" class="cta-button modal-cta" onclick="closeCourseModal();">Enroll Now</a>
+            </div>
+        </div>
+        </div>
+        <br><br><br>
                 <!-- Free Video Courses -->
                 <div class="course-section free-courses">
                     <h2>✅ Free Video Courses</h2>
                     <div class="course-grid">
-                        <div class="course-card feature-card">
-                            <h3>Web Design and Development</h3>
-                            <p>Learn HTML, CSS, and responsive design principles.</p>
-                            <div class="course-price">FREE</div>
-                        </div>
-                        <div class="course-card feature-card">
-                            <h3>Python Programming</h3>
-                            <p>Master Python fundamentals and object-oriented programming.</p>
-                            <div class="course-price">FREE</div>
-                        </div>
-                        <div class="course-card feature-card">
-                            <h3>SQL & Database</h3>
-                            <p>Database design, queries, and data management.</p>
-                            <div class="course-price">FREE</div>
-                        </div>
-                        <div class="course-card feature-card">
-                            <h3>CSS Frameworks</h3>
-                            <p>Bootstrap, Tailwind CSS, and modern styling approaches.</p>
-                            <div class="course-price">FREE</div>
+                        <div class="empty-state">
+                            <span class="empty-icon">🎬</span>
+                            <p>New free courses are on the way. Check back soon.</p>
                         </div>
                     </div>
                 </div>
 
-                <!-- Paid Video Courses -->
+          <!-- Paid Video Courses -->
                 <div class="course-section paid-video">
                     <h2>💰 Paid Video Courses</h2>
                     <div class="course-grid">
-                        <div class="course-card feature-card">
-                            <h3>Advanced JavaScript</h3>
-                            <p>ES6+, async programming, and modern JS frameworks.</p>
-                            <div class="course-price">$99</div>
-                        </div>
-                        <div class="course-card feature-card">
-                            <h3>PHP Development</h3>
-                            <p>Server-side programming and web application development.</p>
-                            <div class="course-price">$79</div>
-                        </div>
-                        <div class="course-card feature-card">
-                            <h3>Python Libraries</h3>
-                            <p>NumPy, Pandas, Matplotlib, and data science tools.</p>
-                            <div class="course-price">$129</div>
-                        </div>
-                        <div class="course-card feature-card">
-                            <h3>AI Prompt Engineering</h3>
-                            <p>Master the art of AI communication and optimization.</p>
-                            <div class="course-price">$149</div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Paid Live Courses -->
-                <div class="course-section paid-live">
-                    <h2>🧑‍🏫 Paid Live Courses</h2>
-                    <div class="course-grid">
-                        <div class="course-card feature-card">
-                            <h3>Full-Stack Development</h3>
-                            <p>Complete web development with live mentorship.</p>
-                            <div class="course-price">$299</div>
-                        </div>
-                        <div class="course-card feature-card">
-                            <h3>AI & Machine Learning</h3>
-                            <p>Live sessions on AI development and implementation.</p>
-                            <div class="course-price">$399</div>
-                        </div>
-                        <div class="course-card feature-card">
-                            <h3>Advanced Python Frameworks</h3>
-                            <p>Django, Flask, and FastAPI with live coding.</p>
-                            <div class="course-price">$249</div>
-                        </div>
-                        <div class="course-card feature-card">
-                            <h3>JavaScript Libraries Bootcamp</h3>
-                            <p>React, Vue, Angular with interactive sessions.</p>
-                            <div class="course-price">$349</div>
+                        <div class="empty-state">
+                            <span class="empty-icon">🎬</span>
+                            <p>New free courses are on the way. Check back soon.</p>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
 
-        <!-- Contact Page -->
-  <div id="contact" class="page">
+        <!-- Team Page -->
+        <div id="team" class="page">
             <div class="container">
-                <form class="contact-form" onsubmit="sendEmail(event)">
-                    <h2>Get In Touch</h2>
-                    <div class="form-group">
-                        <label for="name">Name</label>
-                        <input type="text" id="name" name="from_name" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="email">Email</label>
-                        <input type="email" id="email" name="from_email" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="message">Message</label>
-                        <textarea id="message" name="message" required></textarea>
-                    </div>
-                    <button type="submit" class="submit-btn" id="submit-btn">Send Message</button>
-                </form>
-                
-                <!-- Status message -->
-                <div id="status-message" style="text-align: center; margin-top: 1rem; display: none;">
-                    <p id="status-text"></p>
+                <h2 class="section-title">Meet The Team</h2>
+                <p class="section-subtitle">The people behind Next In.</p>
+                <div class="team-grid">
+                     <div class="team-card">
+    <div class="team-img"><img src="chairman.png" alt="Team member photo"></div>
+    <h3>Md. Ruhul Amin</h3>
+    <p class="team-role">Chairman</p>
+</div>
+
+ <div class="team-card">
+    <div class="team-img"><img src="prof.png" alt="Team member photo"></div>
+    <h3>Ruzana Khan</h3>
+    <p class="team-role">CEO & Founder</p>
+</div>
+ <div class="team-card">
+    <div class="team-img"><img src="maa.jpeg" alt="Team member photo"></div>
+    <h3>Runa Khan</h3>
+    <p class="team-role">Executive Adviser & Creative Director</p>
+</div>
+ <div class="team-card">
+    <div class="team-img"><img src="smh.png" alt="Team member photo"></div>
+    <h3>Nafisa Shikder</h3>
+    <p class="team-role">Social Media Management Head</p>
+</div>
+ <div class="team-card">
+    <div class="team-img"><img src="maa.jpeg" alt="Team member photo"></div>
+    <h3>Runa Khan</h3>
+    <p class="team-role">Executive Adviser & Creative Director</p>
+</div>
+                    <div class="team-card">
+    <div class="team-img"><img src="maa.jpeg" alt="Team member photo"></div>
+    <h3>Runa Khan</h3>
+    <p class="team-role">Executive Adviser & Creative Director</p>
+</div>
                 </div>
+            </div>
+        </div>
     </main>
 
-<script src="main.js"></script>
+    <footer class="footer" id="footer">
+        <div class="footer-contact">
+            <p>Connect with us directly</p>
+            <div class="social-links">
+                <a class="social-link" href="https://www.facebook.com/nextinCorp" target="_blank" rel="noopener noreferrer">
+                    Facebook
+                </a>
+                <a class="social-link" href="https://x.com/NextIN_BD" target="_blank" rel="noopener noreferrer">
+                    <svg viewBox="0 0 24 24"><path d="M18.24 2H21l-6.55 7.49L22.2 22h-6.13l-4.8-6.28L5.7 22H2.94l7-8.01L2 2h6.28l4.34 5.74L18.24 2Zm-1.07 18.2h1.7L7.02 3.7H5.19l12 16.5Z"/></svg>
+                    X
+                </a>
+                <a class="social-link" href="https://www.linkedin.com/company/nextinhq/" target="_blank" rel="noopener noreferrer">
+                    <svg viewBox="0 0 24 24"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.03-3.04-1.85-3.04-1.86 0-2.14 1.45-2.14 2.95v5.66H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.38-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28ZM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12ZM7.12 20.45H3.56V9h3.56v11.45Z"/></svg>
+                    LinkedIn
+                </a>
+                <a class="social-link" href="https://wa.me/8801347139231" target="_blank" rel="noopener noreferrer">
+                    <svg viewBox="0 0 24 24"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38a9.87 9.87 0 0 0 4.74 1.21h.01c5.46 0 9.91-4.45 9.91-9.91C21.96 6.45 17.5 2 12.04 2Zm5.8 14.03c-.24.68-1.4 1.32-1.94 1.4-.5.08-1.12.11-1.8-.11-.42-.13-.95-.31-1.64-.6-2.88-1.24-4.76-4.14-4.9-4.33-.14-.19-1.17-1.56-1.17-2.98s.74-2.11 1-2.4c.26-.29.57-.36.76-.36.19 0 .38 0 .55.01.18.01.41-.07.64.49.24.58.81 2 .88 2.15.07.15.12.32.02.51-.1.19-.15.31-.29.48-.14.17-.3.37-.43.5-.14.14-.29.29-.13.57.17.29.74 1.22 1.59 1.98 1.09.98 2.01 1.28 2.3 1.42.29.14.46.12.63-.07.17-.19.72-.84.91-1.13.19-.29.38-.24.63-.14.26.1 1.65.78 1.94.92.29.14.48.21.55.33.07.12.07.68-.17 1.36Z"/></svg>
+                    WhatsApp
+                </a>
+            </div>
+            <p style="margin-top: 1rem; margin-bottom: 0;">nextinhq@gmail.com</p>
+        </div>
+        <p>&copy; <span id="copyright-year"></span> <strong>NeXT Innovation</strong>. All rights reserved.</p>
+    </footer>
+
+
+  <script>// Navigation and particle system initialization
+
+// Initialize particles with matrix rain effect
+function createParticles() {
+    const bg = document.querySelector('.animated-bg');
+    
+    // Add floating shapes
+    const shapesContainer = document.createElement('div');
+    shapesContainer.className = 'floating-shapes';
+    for (let i = 0; i < 3; i++) {
+        const shape = document.createElement('div');
+        shape.className = 'shape';
+        shapesContainer.appendChild(shape);
+    }
+    bg.appendChild(shapesContainer);
+    
+    // Add fourth gradient orb
+    const orb4 = document.createElement('div');
+    orb4.className = 'gradient-orb orb-4';
+    bg.appendChild(orb4);
+    
+    // Create matrix rain particles
+    for (let i = 0; i < 100; i++) {
+        const particle = document.createElement('div');
+        particle.className = 'particle';
+        particle.style.left = Math.random() * 100 + '%';
+        particle.style.animationDelay = Math.random() * 8 + 's';
+        particle.style.animationDuration = (Math.random() * 4 + 6) + 's';
+        bg.appendChild(particle);
+    }
+}
+
+// Navigation functionality
+function showPage(pageId) {
+    const pages = document.querySelectorAll('.page');
+    pages.forEach(page => page.classList.remove('active'));
+    document.getElementById(pageId).classList.add('active');
+    
+    // Update nav active state
+    const navLinks = document.querySelectorAll('.nav-links a');
+    navLinks.forEach(link => link.classList.remove('active'));
+
+    // Close mobile menu after navigating
+    const navLinksList = document.querySelector('.nav-links');
+    const mobileMenu = document.getElementById('mobileMenu');
+    if (window.innerWidth <= 768) {
+        navLinksList.classList.remove('open');
+        mobileMenu.classList.remove('open');
+    }
+
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+// Navbar scroll effect
+window.addEventListener('scroll', () => {
+    const navbar = document.getElementById('navbar');
+    if (window.scrollY > 50) {
+        navbar.classList.add('scrolled');
+    } else {
+        navbar.classList.remove('scrolled');
+    }
+});
+
+// Mobile menu toggle
+function toggleMobileMenu() {
+    const navLinks = document.getElementById('navLinks');
+    const mobileMenu = document.getElementById('mobileMenu');
+    navLinks.classList.toggle('open');
+    mobileMenu.classList.toggle('open');
+}
+
+/* ---------------------------
+   Course "View More" modal
+--------------------------- */
+const courseDetails = {
+    'ai-prompt': {
+        title: 'AI & Prompt Engineering',
+        desc: 'Learn to design, refine, and optimize prompts for real-world AI tools. Covers prompt patterns, use-case workflows, and best practices for getting reliable results from modern AI models.',
+        meta: ['📅 8 weeks', '🗓️ 2 classes/week', '⏱️ 1.5 hrs/class', '💻 Live on Google Meet'],
+        price: '৳999',
+        curriculum: [
+            'Orientation: Careers in AI & Prompt Engineering',
+            'Anatomy of a Perfect Prompt',
+            'Advanced Prompt Structure & Formatting',
+            'Research-Based Prompting',
+            'Chain-of-Thought (CoT) & Reasoning',
+            'Prompt Chaining & Iterative Refinement',
+            'Negative Prompting & Guardrails',
+            'Mid-Term Project: The Expert Consultant',
+            'Introduction to AI Agents',
+            'Building No-Code Workflows',
+            'Multi-Agent Systems & Orchestration',
+            'Image & Multimodal Prompting',
+            'AI Safety, Ethics & Jailbreak Defense',
+            'Project-Based Learning',
+            'Project-Based Learning',
+            'Job Hunt Strategy'
+        ]
+    },
+    'digital-marketing': {
+        title: 'Digital Marketing',
+        desc: 'A practical introduction to SEO, social media growth, content strategy, and running online ad campaigns — built for beginners who want to market products and services online.',
+        meta: ['📅 8 weeks', '🗓️ 2 classes/week', '⏱️ 1.5 hrs/class', '💻 Live on Google Meet'],
+        price: '৳999',
+        curriculum: [
+            'Orientation: Careers in Digital Marketing, Salary Ranges',
+            'Keyword Research',
+            'SEO',
+            'Competitor Research & SMM Strategy',
+            'Facebook Marketing',
+            'LinkedIn Marketing',
+            'Instagram & X Marketing',
+            'Q&A / Review Session',
+            'SEM (Search Engine Marketing)',
+            'Email Marketing',
+            'Lead Generation & Ad Nurturing',
+            'WordPress',
+            'Freelancing Platforms',
+            'Affiliate Marketing',
+            'Real-Time Income Practicum',
+            'Job Readiness'
+        ]
+    }
+};
+
+function openCourseModal(courseId) {
+    const course = courseDetails[courseId];
+    if (!course) return;
+
+    document.getElementById('modal-title').textContent = course.title;
+    document.getElementById('modal-desc').textContent = course.desc;
+    document.getElementById('modal-price').textContent = course.price;
+
+    const metaContainer = document.getElementById('modal-meta');
+    metaContainer.innerHTML = '';
+    course.meta.forEach(item => {
+        const span = document.createElement('span');
+        span.className = 'meta-item';
+        span.textContent = item;
+        metaContainer.appendChild(span);
+    });
+
+    const curriculumWrap = document.getElementById('modal-curriculum-wrap');
+    const curriculumList = document.getElementById('modal-curriculum');
+    curriculumList.innerHTML = '';
+
+    if (course.curriculum && course.curriculum.length) {
+        course.curriculum.forEach((item, index) => {
+            const li = document.createElement('li');
+            li.className = 'curriculum-item';
+
+            const dayBadge = document.createElement('span');
+            dayBadge.className = 'curriculum-day';
+            dayBadge.textContent = 'Day ' + (index + 1);
+
+            const text = document.createElement('span');
+            text.textContent = item;
+
+            li.appendChild(dayBadge);
+            li.appendChild(text);
+            curriculumList.appendChild(li);
+        });
+        curriculumWrap.style.display = 'block';
+    } else {
+        curriculumWrap.style.display = 'none';
+    }
+
+    document.getElementById('course-modal').classList.add('open');
+    document.body.style.overflow = 'hidden';
+}
+
+function closeCourseModal() {
+    document.getElementById('course-modal').classList.remove('open');
+    document.body.style.overflow = '';
+}
+
+function closeCourseModalOnOverlay(event) {
+    if (event.target.id === 'course-modal') {
+        closeCourseModal();
+    }
+}
+
+document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') closeCourseModal();
+});
+
+// Loading screen
+window.addEventListener('load', () => {
+    setTimeout(() => {
+        document.getElementById('loading').classList.add('hidden');
+    }, 200);
+});
+
+// Set current year in footer copyright
+document.addEventListener('DOMContentLoaded', () => {
+    const yearEl = document.getElementById('copyright-year');
+    if (yearEl) yearEl.textContent = new Date().getFullYear();
+});
+
+// Initialize particles when DOM is loaded
+document.addEventListener('DOMContentLoaded', () => {
+    createParticles();
+});
+
+// Smooth animations for course cards
+document.addEventListener('DOMContentLoaded', () => {
+    const observerOptions = {
+        threshold: 0.1,
+        rootMargin: '0px 0px -50px 0px'
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.style.opacity = '1';
+                entry.target.style.transform = 'translateY(0)';
+            }
+        });
+    }, observerOptions);
+
+    // Observe all course cards and team cards
+    const cards = document.querySelectorAll('.course-card, .feature-card, .team-card');
+    cards.forEach((card, i) => {
+        card.style.opacity = '0';
+        card.style.transform = 'translateY(20px)';
+        card.style.transition = `opacity 0.6s ease ${Math.min(i * 0.06, 0.4)}s, transform 0.6s ease ${Math.min(i * 0.06, 0.4)}s`;
+        observer.observe(card);
+    });
+});</script>
 
 </body>
 </html>
-       
