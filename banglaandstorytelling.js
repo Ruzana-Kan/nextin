@@ -6,8 +6,6 @@ var D=[
 ['Skip to content','মূল অংশে যান'],
 ['Courses','কোর্সসমূহ'],['How it works','কীভাবে কাজ করে'],['About','আমাদের সম্পর্কে'],['Team','টিম'],['FAQ','প্রশ্নোত্তর'],['Contact','যোগাযোগ'],
 ['Enroll now','এখনই ভর্তি হন'],['Menu','মেনু'],['Intro','পরিচিতি'],['Process','প্রক্রিয়া'],
-['All three live courses are ৳999 each today.','আজ তিনটি লাইভ কোর্সের প্রতিটি মাত্র ৳999।'],
-
 ['( Chapter 1 / Intro )','( অধ্যায় ১ / পরিচিতি )'],['Start with','শুরু করুন'],
 ['AI & Prompt Engineering','এআই ও প্রম্পট ইঞ্জিনিয়ারিং'],['Digital Marketing','ডিজিটাল মার্কেটিং'],['Web Development','ওয়েব ডেভেলপমেন্ট'],
 ['Live on Google Meet','গুগল মিটে লাইভ'],['8 weeks','৮ সপ্তাহ'],['From ৳999','৳999 থেকে'],['Scroll to discover','স্ক্রল করুন'],
@@ -290,12 +288,4 @@ if(tt){
  addEventListener('scroll',function(){tt.classList.toggle('show',scrollY>500)},{passive:true});
  tt.addEventListener('click',function(){window.scrollTo(0,0);document.documentElement.scrollTop=0;document.body.scrollTop=0})}
 
-/* top pop-up: slides in once per visit, closes on the x */
-var pop=$('#topPop'),seen=false;
-try{seen=sessionStorage.getItem('nx-pop')==='1'}catch(e){}
-function hidePop(){if(!pop)return;pop.classList.remove('show');try{sessionStorage.setItem('nx-pop','1')}catch(e){}}
-window.__showPop=function(){if(pop&&!seen)pop.classList.add('show')};
-if(pop){var x=$('.pop-x',pop);if(x)x.addEventListener('click',hidePop);
- var pb=$('.btn',pop);if(pb)pb.addEventListener('click',hidePop);
- addEventListener('keydown',function(e){if(e.key==='Escape')hidePop()})}
 })();
