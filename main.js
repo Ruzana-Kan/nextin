@@ -558,7 +558,8 @@ var D=[
 ['Have a question? Message us directly.','প্রশ্ন আছে? সরাসরি মেসেজ করুন।'],
 ['Reach us on email or WhatsApp, whichever is easier.','ইমেইল বা হোয়াটসঅ্যাপে যেটা সহজ, সেখানেই আমাদের সঙ্গে যোগাযোগ করুন।'],
 ['Email: nextinhq@gmail.com','ইমেইল: nextinhq@gmail.com'],['WhatsApp: +880 1347-139231','হোয়াটসঅ্যাপ: +880 1347-139231'],
-['Live online tech courses for youth in Bangladesh.','বাংলাদেশের তরুণদের জন্য লাইভ অনলাইন টেক কোর্স।']
+['Live online tech courses for youth in Bangladesh.','বাংলাদেশের তরুণদের জন্য লাইভ অনলাইন টেক কোর্স।'],
+['Explore','অন্বেষণ করুন'],['Reach us','যোগাযোগ'],['Follow us','আমাদের অনুসরণ করুন'],['© 2026 NeXT Innovation.','© ২০২৬ NeXT Innovation।'],['All rights reserved.','সর্বস্বত্ব সংরক্ষিত।']
 ];
 var M={},R={};
 function nk(s){return s.replace(/\s+/g,' ').trim()}
@@ -704,5 +705,31 @@ var tt=$('#toTop');
 if(tt){
  addEventListener('scroll',function(){tt.classList.toggle('show',scrollY>500)},{passive:true});
  tt.addEventListener('click',function(){window.scrollTo(0,0);document.documentElement.scrollTop=0;document.body.scrollTop=0})}
+
+/* footer wordmark: fit to width, cut exactly through the middle of the capitals, letters rise on scroll, spotlight follows the pointer */
+var fb=$('.foot-big');
+if(fb){
+ var fbt=$('.fb-t',fb),fbl=$$('.c',fb),ft=fb.closest('footer'),fbOn=false,pm={x:0,y:0,t:-1e9},pr=document.createElement('span'),mc=document.createElement('canvas').getContext('2d');
+ pr.className='fb-probe';fbt.appendChild(pr);
+ function fitFb(){
+  fb.style.fontSize='100px';fb.style.height='auto';
+  var w=fbt.getBoundingClientRect().width,avail=fb.clientWidth*.96,size=w>0?100*avail/w:100;
+  fb.style.fontSize=size+'px';
+  var base=pr.getBoundingClientRect().bottom-fb.getBoundingClientRect().top;
+  mc.font='800 '+size+'px "Plus Jakarta Sans",sans-serif';
+  var cap=mc.measureText('N').actualBoundingBoxAscent||size*.7;
+  fb.style.height=Math.max(size*.3,base-cap*.5)+'px'}
+ fitFb();addEventListener('resize',fitFb);addEventListener('load',fitFb);
+ if(document.fonts&&document.fonts.ready)document.fonts.ready.then(fitFb);
+ var calm=matchMedia('(prefers-reduced-motion: reduce)').matches;
+ if('IntersectionObserver' in window&&!calm){
+  new IntersectionObserver(function(es){fbOn=es[0].isIntersecting;if(fbOn)fb.classList.add('in')},{threshold:.1}).observe(fb)}
+ else{fb.classList.add('in')}
+ ft.addEventListener('pointermove',function(e){pm.x=e.clientX;pm.y=e.clientY;pm.t=performance.now()});
+ if(!calm)(function spot(t){requestAnimationFrame(spot);if(!fbOn||document.hidden)return;
+  var r=fb.getBoundingClientRect(),x,y;
+  if(t-pm.t<2500){x=pm.x;y=pm.y}else{x=r.left+r.width*(.5+.52*Math.sin(t/1700));y=r.top+r.height*.3}
+  for(var i=0;i<fbl.length;i++){var cr=fbl[i].getBoundingClientRect();fbl[i].style.setProperty('--lx',(x-cr.left)+'px');fbl[i].style.setProperty('--ly',(y-cr.top)+'px')}
+ })(0)}
 
 })();
